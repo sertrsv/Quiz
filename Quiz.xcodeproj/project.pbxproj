@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F232E4B28E1DD1800BF84DF /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E4A28E1DD1800BF84DF /* QuestionTest.swift */; };
-		2F232E4D28E1E04900BF84DF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E4C28E1E04900BF84DF /* Question.swift */; };
 		2F232E4F28E22F4500BF84DF /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E4E28E22F4500BF84DF /* ViewControllerFactory.swift */; };
 		2F232E5128E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5028E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift */; };
 		2F232E5328E2303C00BF84DF /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5228E2303C00BF84DF /* iOSViewControllerFactory.swift */; };
@@ -53,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		2F232E4A28E1DD1800BF84DF /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
-		2F232E4C28E1E04900BF84DF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2F232E4E28E22F4500BF84DF /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		2F232E5028E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		2F232E5228E2303C00BF84DF /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				2F29426128E09A05009EC7C4 /* CorrectAnswerCell.swift */,
 				2F29426328E09A2B009EC7C4 /* WrongAnswerCell.swift */,
 				2F29426E28E0F6E4009EC7C4 /* NavigationControllerRouter.swift */,
-				2F232E4C28E1E04900BF84DF /* Question.swift */,
 				2F232E4E28E22F4500BF84DF /* ViewControllerFactory.swift */,
 				2F232E5228E2303C00BF84DF /* iOSViewControllerFactory.swift */,
 				2F232E5C28E32D6700BF84DF /* QuestionPresenter.swift */,
@@ -302,7 +299,6 @@
 				2F29426228E09A05009EC7C4 /* CorrectAnswerCell.swift in Sources */,
 				2F8D47B228DF558A00F86440 /* SceneDelegate.swift in Sources */,
 				2F29426028E099CD009EC7C4 /* PresentableAnswer.swift in Sources */,
-				2F232E4D28E1E04900BF84DF /* Question.swift in Sources */,
 				2F29426428E09A2B009EC7C4 /* WrongAnswerCell.swift in Sources */,
 				2F232E5D28E32D6700BF84DF /* QuestionPresenter.swift in Sources */,
 				2F232E5328E2303C00BF84DF /* iOSViewControllerFactory.swift in Sources */,
