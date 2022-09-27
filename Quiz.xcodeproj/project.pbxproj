@@ -17,6 +17,8 @@
 		2F232E5928E3014300BF84DF /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5828E3014300BF84DF /* ResultsPresenter.swift */; };
 		2F232E5B28E32C5B00BF84DF /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5A28E32C5B00BF84DF /* QuestionPresenterTest.swift */; };
 		2F232E5D28E32D6700BF84DF /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5C28E32D6700BF84DF /* QuestionPresenter.swift */; };
+		2F232E5F28E3487300BF84DF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2F232E5E28E3487300BF84DF /* .gitignore */; };
+		2F232E6028E3487300BF84DF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2F232E5E28E3487300BF84DF /* .gitignore */; };
 		2F29425228E05FB8009EC7C4 /* ResultsViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29425128E05FB8009EC7C4 /* ResultsViewControllerTest.swift */; };
 		2F29425428E0603F009EC7C4 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29425328E0603F009EC7C4 /* ResultsViewController.swift */; };
 		2F29425628E060B2009EC7C4 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F29425528E060B2009EC7C4 /* ResultsViewController.xib */; };
@@ -60,6 +62,7 @@
 		2F232E5828E3014300BF84DF /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
 		2F232E5A28E32C5B00BF84DF /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
 		2F232E5C28E32D6700BF84DF /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
+		2F232E5E28E3487300BF84DF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2F29425128E05FB8009EC7C4 /* ResultsViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewControllerTest.swift; sourceTree = "<group>"; };
 		2F29425328E0603F009EC7C4 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		2F29425528E060B2009EC7C4 /* ResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultsViewController.xib; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 				2F8D47C528DF558B00F86440 /* QuizTests */,
 				2F8D47AD28DF558A00F86440 /* Products */,
 				2F29427128E0FD5F009EC7C4 /* Frameworks */,
+				2F232E5E28E3487300BF84DF /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -268,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F8D47BC28DF558B00F86440 /* LaunchScreen.storyboard in Resources */,
+				2F232E5F28E3487300BF84DF /* .gitignore in Resources */,
 				2F29425C28E091D0009EC7C4 /* WrongAnswerCell.xib in Resources */,
 				2F8D47B928DF558B00F86440 /* Assets.xcassets in Resources */,
 				2F8D47E428DF591E00F86440 /* QuestionViewController.xib in Resources */,
@@ -280,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F232E6028E3487300BF84DF /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
