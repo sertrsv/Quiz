@@ -12,6 +12,10 @@ struct ResultsPresenter {
 	let questions: [Question<String>]
 	let correctAnswers: [Question<String>: [String]]
 
+	var title: String {
+		return "Result"
+	}
+
 	var summary: String {
 		let score = result.score
 		let all = result.answers.count

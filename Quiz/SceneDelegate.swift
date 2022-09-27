@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import QuizEngine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-
+	var game: Game<Question<String>, [String], NavigationControllerRouter>?
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -18,15 +19,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 
+		let question1 = Question.singleAnswer("What is the best programming language?")
+		let question2 = Question.multipleAnswer("Кто хочет спать?")
+		let questions = [question1, question2]
+
+		let option1 = "C++"
+		let option2 = "Python"
+		let option3 = "Swift"
+		let option4 = "Java"
+		let options1 = [option1, option2, option3, option4]
+
+		let option21 = "Я"
+		let option22 = "Я"
+		let option23 = "Я"
+		let option24 = "Я"
+		let options2 = [option21, option22, option23, option24]
+
+		let correctAnswers = [question1: [option3], question2: [option21, option22, option23, option24]]
+
+		let navigationController = UINavigationController()
+		let factory = iOSViewControllerFactory(questions: questions, options: [question1: options1, question2: options2], correctAnswers: correctAnswers)
+		let router = NavigationControllerRouter(navigationController, factory: factory)
+
 		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
 		window?.windowScene = windowScene
-
-		let vc = ResultsViewController(summary: "You got 1/2 correct", answers: [
-			PresentableAnswer(question: "Question?? Question?? Question?? Question?? Question?? Question?? Question??", answer: "Yeah! Yeah! Yeah! Yeah! Yeah! Yeah! Yeah! Yeah! ", wrongAnswer: nil),
-			PresentableAnswer(question: "Another question??", answer: "Hell yeah!", wrongAnswer: "Hell no!")
-		])
-		window?.rootViewController = vc
+		window?.rootViewController = navigationController
 		window?.makeKeyAndVisible()
+
+		game = startGame(questions: questions, router: router, correctAnswers: correctAnswers)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
