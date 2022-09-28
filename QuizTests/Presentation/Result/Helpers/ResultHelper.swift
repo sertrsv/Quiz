@@ -7,13 +7,14 @@
 
 import QuizEngine
 
-extension Result: Hashable {
-
+extension Result: Hashable where Answer: Equatable {
 	public func hash(into hasher: inout Hasher) {
 		hasher.combine(1)
 	}
+}
 
-	public static func == (lhs: Result, rhs: Result) -> Bool {
-		return lhs.score == rhs.score
+extension Result: Equatable where Answer: Equatable {
+	public static func == (lhs: QuizEngine.Result<Question, Answer>, rhs: QuizEngine.Result<Question, Answer>) -> Bool {
+		return lhs.score == rhs.score && lhs.answers == rhs.answers
 	}
 }
