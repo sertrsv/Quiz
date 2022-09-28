@@ -18,7 +18,12 @@ class QuestionViewController: UIViewController, UITableViewDataSource, UITableVi
 	private var selection: (([String]) -> Void)? = nil
 	private let reuseIdentifier = "Cell"
 
-	convenience init(question: String, options: [String], allowsMultipleSelection: Bool, selection: @escaping ([String]) -> Void) {
+	convenience init(
+		question: String,
+		options: [String],
+		allowsMultipleSelection: Bool,
+		selection: @escaping ([String]) -> Void
+	) {
 		self.init()
 		self.question = question
 		self.options = options

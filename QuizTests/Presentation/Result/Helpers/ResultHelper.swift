@@ -14,7 +14,10 @@ extension Result: Hashable where Answer: Equatable {
 }
 
 extension Result: Equatable where Answer: Equatable {
-	public static func == (lhs: QuizEngine.Result<Question, Answer>, rhs: QuizEngine.Result<Question, Answer>) -> Bool {
+	public static func == (
+		lhs: QuizEngine.Result<Question, Answer>,
+		rhs: QuizEngine.Result<Question, Answer>
+	) -> Bool {
 		return lhs.score == rhs.score && lhs.answers == rhs.answers
 	}
 }

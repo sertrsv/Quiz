@@ -33,7 +33,11 @@ struct ResultsPresenter {
 		}
 	}
 
-	fileprivate func presentableAnswer(_ question: Question<String>, _ userAnswer: [String], _ correctAnswer: [String]) -> PresentableAnswer {
+	fileprivate func presentableAnswer(
+		_ question: Question<String>,
+		_ userAnswer: [String],
+		_ correctAnswer: [String]
+	) -> PresentableAnswer {
 		switch question {
 		case .singleAnswer(let value), .multipleAnswer(let value):
 			return PresentableAnswer(

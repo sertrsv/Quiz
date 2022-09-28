@@ -26,11 +26,15 @@ final class QuestionViewControllerTest: XCTestCase {
 	}
 
 	func test_viewDidLoad_withSingleSelection_configuresTableView() throws {
-		XCTAssertFalse(makeSUT(options: ["A1", "A2"], allowsMultipleSelection: false).tableView.allowsMultipleSelection)
+		XCTAssertFalse(
+			makeSUT(options: ["A1", "A2"], allowsMultipleSelection: false).tableView.allowsMultipleSelection
+		)
 	}
 
 	func test_viewDidLoad_withMultipleSelection_configuresTableView() throws {
-		XCTAssertTrue(makeSUT(options: ["A1", "A2"], allowsMultipleSelection: true).tableView.allowsMultipleSelection)
+		XCTAssertTrue(
+			makeSUT(options: ["A1", "A2"], allowsMultipleSelection: true).tableView.allowsMultipleSelection
+		)
 	}
 
 	func test_optionSelected_withSingleSelection_notifiesDelegateWithLastSelection() throws {
@@ -85,7 +89,12 @@ final class QuestionViewControllerTest: XCTestCase {
 		allowsMultipleSelection: Bool = false,
 		selection: @escaping ([String]) -> Void = { _ in }
 	) -> QuestionViewController {
-		let sut = QuestionViewController(question: question, options: options, allowsMultipleSelection: allowsMultipleSelection, selection: selection)
+		let sut = QuestionViewController(
+			question: question,
+			options: options,
+			allowsMultipleSelection: allowsMultipleSelection,
+			selection: selection
+		)
 		_ = sut.view
 		return sut
 	}

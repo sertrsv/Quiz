@@ -46,7 +46,9 @@ final class ResultsPresenterTest: XCTestCase {
 		let correctAnswers = [singleAnswerQuestion: ["A2"]]
 		let result = Result(answers: answers, score: 0)
 
-		let sut = ResultsPresenter(result: result, questions: [singleAnswerQuestion], correctAnswers: correctAnswers)
+		let sut = ResultsPresenter(
+			result: result, questions: [singleAnswerQuestion], correctAnswers: correctAnswers
+		)
 
 		XCTAssertEqual(sut.presentableAnswers.count, 1)
 		XCTAssertEqual(sut.presentableAnswers.first!.question, "Q1")
@@ -59,7 +61,9 @@ final class ResultsPresenterTest: XCTestCase {
 		let correctAnswers = [multipleAnswerQuestion: ["A2", "A3"]]
 		let result = Result(answers: answers, score: 0)
 
-		let sut = ResultsPresenter(result: result, questions: [multipleAnswerQuestion], correctAnswers: correctAnswers)
+		let sut = ResultsPresenter(
+			result: result, questions: [multipleAnswerQuestion], correctAnswers: correctAnswers
+		)
 
 		XCTAssertEqual(sut.presentableAnswers.count, 1)
 		XCTAssertEqual(sut.presentableAnswers.first!.question, "Q2")
@@ -68,12 +72,22 @@ final class ResultsPresenterTest: XCTestCase {
 	}
 
 	func test_presentableAnswers_withTwoQuestions_mapsOrderedAnswer() {
-		let answers: [Question<String>: [String]] = [multipleAnswerQuestion: ["A2"], singleAnswerQuestion: ["A1", "A4"]]
-		let correctAnswers = [multipleAnswerQuestion: ["A2"], singleAnswerQuestion: ["A1", "A4"]]
-		let orderedQuestions = [singleAnswerQuestion, multipleAnswerQuestion]
+		let answers: [Question<String>: [String]] = [
+			multipleAnswerQuestion: ["A2"], singleAnswerQuestion: ["A1", "A4"]
+		]
+		let correctAnswers = [
+			multipleAnswerQuestion: ["A2"], singleAnswerQuestion: ["A1", "A4"]
+		]
+		let orderedQuestions = [
+			singleAnswerQuestion, multipleAnswerQuestion
+		]
 		let result = Result(answers: answers, score: 0)
 
-		let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: correctAnswers)
+		let sut = ResultsPresenter(
+			result: result,
+			questions: orderedQuestions,
+			correctAnswers: correctAnswers
+		)
 
 		XCTAssertEqual(sut.presentableAnswers.count, 2)
 		XCTAssertEqual(sut.presentableAnswers.first!.question, "Q1")

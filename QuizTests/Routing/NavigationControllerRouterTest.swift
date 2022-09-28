@@ -137,7 +137,10 @@ final class NavigationControllerRouterTest: XCTestCase {
 			stubbedResults[result] = viewController
 		}
 
-		func questionViewController(for question: Question<String>, answerCallback: @escaping ([String]) -> Void) -> UIViewController {
+		func questionViewController(
+			for question: Question<String>,
+			answerCallback: @escaping ([String]) -> Void
+		) -> UIViewController {
 			self.answerCallback[question] = answerCallback
 			return stubbedQuestions[question] ?? UIViewController()
 		}
