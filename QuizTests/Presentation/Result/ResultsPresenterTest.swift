@@ -56,22 +56,10 @@ final class ResultsPresenterTest: XCTestCase {
 	}
 
 	func test_presentableAnswers_withTwoQuestions_mapsOrderedAnswer() {
-		let answers: [Question<String>: [String]] = [
-			multipleAnswerQuestion: ["A2"], singleAnswerQuestion: ["A1", "A4"]
-		]
-		let correctAnswers = [
-			multipleAnswerQuestion: ["A2"], singleAnswerQuestion: ["A1", "A4"]
-		]
-		let orderedQuestions = [
-			singleAnswerQuestion, multipleAnswerQuestion
-		]
-		let result = Result(answers: answers, score: 0)
+		let userAnswers = [(singleAnswerQuestion, ["A1", "A4"]), (multipleAnswerQuestion, ["A2"])]
+		let correctAnswers = [(singleAnswerQuestion, ["A1", "A4"]), (multipleAnswerQuestion, ["A2"])]
 
-		let sut = ResultsPresenter(
-			result: result,
-			questions: orderedQuestions,
-			correctAnswers: correctAnswers
-		)
+		let sut = makeSUT(userAnswers: userAnswers, correctAnswers: correctAnswers)
 
 		XCTAssertEqual(sut.presentableAnswers.count, 2)
 		XCTAssertEqual(sut.presentableAnswers.first!.question, "Q1")
