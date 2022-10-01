@@ -86,7 +86,7 @@ final class iOSViewControllerFactory: ViewControllerFactory {
 	}
 
 	func resultsViewController(
-		for result: QuizEngine.Result<Question<String>, [String]>
+		for result: Result<Question<String>, [String]>
 	) -> UIViewController {
 		let presenter = ResultsPresenter(
 			userAnswers: questions.map { question in
