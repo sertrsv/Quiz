@@ -28,12 +28,7 @@ final class ResultsPresenterTest: XCTestCase {
 	}
 
 	func test_presentableAnswers_withoutQuestions_isEmpty() {
-		let answers: [Question<String>: [String]] = [:]
-		let result = Result(answers: answers, score: 0)
-
-		let sut = ResultsPresenter(result: result, questions: [], correctAnswers: [:])
-
-		XCTAssertTrue(sut.presentableAnswers.isEmpty)
+		XCTAssertTrue(makeSUT(userAnswers: [], correctAnswers: []).presentableAnswers.isEmpty)
 	}
 
 	func test_presentableAnswers_withWrongSingleAnswer_mapsAnswer() {
