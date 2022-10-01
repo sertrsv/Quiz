@@ -84,6 +84,19 @@ class iOSViewControllerFactory: ViewControllerFactory {
 	}
 
 	func resultsViewController(
+		for answers: Answers
+	) -> UIViewController {
+		let presenter = ResultsPresenter(
+			userAnswers: answers,
+			correctAnswers: correctAnswers(),
+			scorer: BasicScore.score
+		)
+		let controller = ResultsViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
+		controller.title = presenter.title
+		return controller
+	}
+
+	func resultsViewController(
 		for result: QuizEngine.Result<Question<String>, [String]>
 	) -> UIViewController {
 		let presenter = ResultsPresenter(
