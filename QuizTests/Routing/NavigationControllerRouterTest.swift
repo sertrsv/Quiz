@@ -98,7 +98,7 @@ final class NavigationControllerRouterTest: XCTestCase {
 		XCTAssertTrue(callbackWasFired)
 	}
 
-	func test_routeToResult_showsResultController() {
+	func test_didCompleteQuiz_showsResultController() {
 		let viewController = UIViewController()
 		let userAnswers = [(singleAnswerQuestion, ["A1"])]
 
