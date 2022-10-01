@@ -11,7 +11,6 @@
 		2F232E5128E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5028E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift */; };
 		2F232E5328E2303C00BF84DF /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5228E2303C00BF84DF /* iOSViewControllerFactory.swift */; };
 		2F232E5528E2FA8F00BF84DF /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5428E2FA8F00BF84DF /* ResultsPresenterTest.swift */; };
-		2F232E5728E3007F00BF84DF /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5628E3007F00BF84DF /* ResultHelper.swift */; };
 		2F232E5928E3014300BF84DF /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5828E3014300BF84DF /* ResultsPresenter.swift */; };
 		2F232E5B28E32C5B00BF84DF /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5A28E32C5B00BF84DF /* QuestionPresenterTest.swift */; };
 		2F232E5D28E32D6700BF84DF /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F232E5C28E32D6700BF84DF /* QuestionPresenter.swift */; };
@@ -56,7 +55,6 @@
 		2F232E5028E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		2F232E5228E2303C00BF84DF /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
 		2F232E5428E2FA8F00BF84DF /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
-		2F232E5628E3007F00BF84DF /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
 		2F232E5828E3014300BF84DF /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
 		2F232E5A28E32C5B00BF84DF /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
 		2F232E5C28E32D6700BF84DF /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				2F232E5428E2FA8F00BF84DF /* ResultsPresenterTest.swift */,
-				2FDAC55228E4772A00CC1723 /* Helpers */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -353,14 +350,6 @@
 				2F232E5A28E32C5B00BF84DF /* QuestionPresenterTest.swift */,
 			);
 			path = Question;
-			sourceTree = "<group>";
-		};
-		2FDAC55228E4772A00CC1723 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				2F232E5628E3007F00BF84DF /* ResultHelper.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2FDAC55328E4776400CC1723 /* Routing */ = {
@@ -506,7 +495,6 @@
 				2F8D47E028DF567100F86440 /* QuestionViewControllerTest.swift in Sources */,
 				2F64A64728E79BCC00A180CC /* ScoreTest.swift in Sources */,
 				2F232E5B28E32C5B00BF84DF /* QuestionPresenterTest.swift in Sources */,
-				2F232E5728E3007F00BF84DF /* ResultHelper.swift in Sources */,
 				2F29425828E08A4D009EC7C4 /* TableViewHelpers.swift in Sources */,
 				2F29425228E05FB8009EC7C4 /* ResultsViewControllerTest.swift in Sources */,
 				2F232E5128E22FAD00BF84DF /* iOSViewControllerFactoryTest.swift in Sources */,
