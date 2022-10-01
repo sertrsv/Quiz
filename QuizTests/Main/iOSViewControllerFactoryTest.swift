@@ -86,22 +86,36 @@ final class iOSViewControllerFactoryTest: XCTestCase {
 		)
 	}
 
+	func makeSUT(
+		options: [Question<String>: [String]] = [:],
+		correctAnswers: [(Question<String>, [String])] = []
+	) -> iOSViewControllerFactory {
+		return iOSViewControllerFactory(options: options, correctAnswers: correctAnswers)
+	}
+
 	func makeQuestionViewController(
 		question: Question<String> = Question.singleAnswer("")
 	) -> QuestionViewController {
-		return makeSUT(options: [question: options]).questionViewController(
+		return makeSUT(options: [question: options], correctAnswers: [:]).questionViewController(
 			for: question,
 			answerCallback: { _ in }
 		) as! QuestionViewController
 	}
 
 	func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
-		let usersAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-		let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-		let questions = [singleAnswerQuestion, multipleAnswerQuestion]
-		let result = Result(answers: usersAnswers, score: 2)
+		let usersAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1", "A2"])]
+		let correctAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1", "A2"])]
 
-		let presenter = ResultsPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
+		let result = Result(
+			answers: [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]],
+			score: 2
+		)
+
+		let presenter = ResultsPresenter(
+			userAnswers: usersAnswers,
+			correctAnswers: correctAnswers,
+			scorer: { _, _ in result.score }
+		)
 		let sut = makeSUT(correctAnswers: correctAnswers)
 
 		let controller = sut.resultsViewController(for: result) as! ResultsViewController
@@ -109,22 +123,4 @@ final class iOSViewControllerFactoryTest: XCTestCase {
 		return (controller, presenter)
 	}
 
-}
-
-private extension ResultsPresenter {
-	convenience init(
-		result: Result<Question<String>, [String]>,
-		questions: [Question<String>],
-		correctAnswers: [Question<String>: [String]]
-	) {
-		self.init(
-			userAnswers: questions.map { question in
-				(question, result.answers[question]!)
-			},
-			correctAnswers: questions.map { question in
-				(question, correctAnswers[question]!)
-			},
-			scorer: { _, _ in result.score }
-		)
-	}
 }
