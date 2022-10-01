@@ -11,16 +11,6 @@ import QuizEngine
 
 final class NavigationControllerRouterTest: XCTestCase {
 
-	let singleAnswerQuestion = Question.singleAnswer("Q1")
-	let multipleAnswerQuestion = Question.multipleAnswer("Q1")
-
-	let navigationController = NonAnimatedNavigationController()
-	let factory = ViewControllerFactoryStub()
-
-	lazy var sut: NavigationControllerRouter = {
-		NavigationControllerRouter(self.navigationController, factory: self.factory)
-	}()
-
 	func test_answerForQuestion_showsQuestionController() {
 		let viewController = UIViewController()
 		let secondViewController = UIViewController()
@@ -118,13 +108,23 @@ final class NavigationControllerRouterTest: XCTestCase {
 
 	// MARK: Helpers
 
-	class NonAnimatedNavigationController: UINavigationController {
+	private let singleAnswerQuestion = Question.singleAnswer("Q1")
+	private let multipleAnswerQuestion = Question.multipleAnswer("Q1")
+
+	private let navigationController = NonAnimatedNavigationController()
+	private let factory = ViewControllerFactoryStub()
+
+	private lazy var sut: NavigationControllerRouter = {
+		NavigationControllerRouter(self.navigationController, factory: self.factory)
+	}()
+
+	private class NonAnimatedNavigationController: UINavigationController {
 		override func pushViewController(_ viewController: UIViewController, animated: Bool) {
 			super.pushViewController(viewController, animated: false)
 		}
 	}
 
-	class ViewControllerFactoryStub: ViewControllerFactory {
+	private class ViewControllerFactoryStub: ViewControllerFactory {
 		private var stubbedQuestions = [Question<String>: UIViewController]()
 		private var stubbedResults = [[Question<String>]: UIViewController]()
 		var answerCallback = [Question<String>: ([String]) -> Void]()
