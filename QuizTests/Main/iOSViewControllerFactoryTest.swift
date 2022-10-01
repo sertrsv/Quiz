@@ -116,10 +116,9 @@ final class iOSViewControllerFactoryTest: XCTestCase {
 			correctAnswers: correctAnswers,
 			scorer: { _, _ in result.score }
 		)
+
 		let sut = makeSUT(correctAnswers: correctAnswers)
-
 		let controller = sut.resultsViewController(for: result) as! ResultsViewController
-
 		return (controller, presenter)
 	}
 
