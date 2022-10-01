@@ -36,8 +36,8 @@ class NavigationControllerRouter: Router {
 		answer(for: question, completion: answerCallback)
 	}
 
-	func didCompleteQuiz(withAnswers answers: [(question: QuizEngine.Question<String>, answers: [String])]) {
-		show(factory.resultsViewController(for: answers))
+	func didCompleteQuiz(withAnswers answers: [(question: QuizEngine.Question<String>, answer: [String])]) {
+		show(factory.resultsViewController(for: answers.map { ($0.question, $0.answer) }))
 	}
 
 	func routeTo(result: Result<Question<String>, [String]>) {
