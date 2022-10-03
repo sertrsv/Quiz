@@ -14,7 +14,7 @@ struct MultipleAnswerQuestion: View {
 
 	var body: some View {
 		VStack(alignment: .leading) {
-			QuestionHeader(title: title, question: question)
+			HeaderView(title: title, subtitle: question)
 			List {
 				ForEach(store.options.indices, id: \.self) { index in
 					Button {
@@ -25,19 +25,8 @@ struct MultipleAnswerQuestion: View {
 				}
 			}
 			.listStyle(.plain)
-			Button {
-				store.submit()
-			} label: {
-				Text("Submit")
-					.font(.headline)
-					.foregroundColor(.white)
-					.padding()
-					.frame(maxWidth: .infinity)
-					.background(Color.accentColor)
-					.cornerRadius(10)
-			}
-			.disabled(!store.canSubmit)
-			.padding()
+			BigButton(title: "Submit", isEnabled: store.canSubmit, action: store.submit)
+				.padding()
 		}
 	}
 }

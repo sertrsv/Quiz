@@ -15,7 +15,7 @@ struct SingleAnswerQuestion: View {
 
     var body: some View {
 		VStack(alignment: .leading) {
-			QuestionHeader(title: title, question: question)
+			HeaderView(title: title, subtitle: question)
 			List {
 				ForEach(options, id: \.self) { option in
 					Button {
