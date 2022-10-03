@@ -30,7 +30,6 @@ struct SingleAnswerQuestion: View {
 			}
 			.listStyle(.plain)
 		}
-		.border(.red)
 	}
 }
 
