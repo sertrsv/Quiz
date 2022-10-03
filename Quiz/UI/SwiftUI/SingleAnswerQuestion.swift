@@ -15,14 +15,7 @@ struct SingleAnswerQuestion: View {
 
     var body: some View {
 		VStack(alignment: .leading) {
-			VStack(alignment: .leading, spacing: 16) {
-				Text(title)
-					.font(.headline)
-				Text(question)
-				 .font(.title)
-			}
-			.padding()
-
+			QuestionHeader(title: title, question: question)
 			List {
 				ForEach(options, id: \.self) { option in
 					Label(option, systemImage: "circle")
