@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SingleAnswerQuestion: View {
-
 	let title: String
 	let question: String
 	let options: [String]
