@@ -37,6 +37,8 @@
 		2F309E9F28EB544E00770D0A /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F309E9E28EB544E00770D0A /* MultipleSelectionStore.swift */; };
 		2F309EA328EB553D00770D0A /* MultipleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F309EA228EB553D00770D0A /* MultipleAnswerQuestion.swift */; };
 		2F309EA828EB7B8A00770D0A /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F309EA728EB7B8A00770D0A /* BigButton.swift */; };
+		2F309EAC28EB7F0900770D0A /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F309EAB28EB7F0900770D0A /* ResultView.swift */; };
+		2F309EAE28EB878200770D0A /* ResultAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F309EAD28EB878200770D0A /* ResultAnswerCell.swift */; };
 		2F64A64728E79BCC00A180CC /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F64A64628E79BCC00A180CC /* ScoreTest.swift */; };
 		2F64A64A28E79CAA00A180CC /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F64A64928E79CAA00A180CC /* BasicScore.swift */; };
 		2F8D47B028DF558A00F86440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D47AF28DF558A00F86440 /* AppDelegate.swift */; };
@@ -88,6 +90,8 @@
 		2F309E9E28EB544E00770D0A /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
 		2F309EA228EB553D00770D0A /* MultipleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestion.swift; sourceTree = "<group>"; };
 		2F309EA728EB7B8A00770D0A /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
+		2F309EAB28EB7F0900770D0A /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		2F309EAD28EB878200770D0A /* ResultAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAnswerCell.swift; sourceTree = "<group>"; };
 		2F64A64628E79BCC00A180CC /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		2F64A64928E79CAA00A180CC /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
 		2F8D47AC28DF558A00F86440 /* Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,10 +232,9 @@
 		2F2B336328EA715D00AF09C8 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				2F309EAA28EB7EE500770D0A /* Question */,
+				2F309EA928EB7EDE00770D0A /* Result */,
 				2F309EA628EB7A4400770D0A /* Helpers */,
-				2F2B336428EA724F00AF09C8 /* SingleAnswerQuestion.swift */,
-				2F309EA228EB553D00770D0A /* MultipleAnswerQuestion.swift */,
-				2F309E9E28EB544E00770D0A /* MultipleSelectionStore.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -261,6 +264,25 @@
 				2F309EA728EB7B8A00770D0A /* BigButton.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2F309EA928EB7EDE00770D0A /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				2F309EAB28EB7F0900770D0A /* ResultView.swift */,
+				2F309EAD28EB878200770D0A /* ResultAnswerCell.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		2F309EAA28EB7EE500770D0A /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				2F2B336428EA724F00AF09C8 /* SingleAnswerQuestion.swift */,
+				2F309EA228EB553D00770D0A /* MultipleAnswerQuestion.swift */,
+				2F309E9E28EB544E00770D0A /* MultipleSelectionStore.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 		2F64A64328E79ADE00A180CC /* Scoring */ = {
@@ -538,6 +560,7 @@
 				2F309E9F28EB544E00770D0A /* MultipleSelectionStore.swift in Sources */,
 				2F64A64A28E79CAA00A180CC /* BasicScore.swift in Sources */,
 				2F8D47B028DF558A00F86440 /* AppDelegate.swift in Sources */,
+				2F309EAC28EB7F0900770D0A /* ResultView.swift in Sources */,
 				2F232E5928E3014300BF84DF /* ResultsPresenter.swift in Sources */,
 				2F29426228E09A05009EC7C4 /* CorrectAnswerCell.swift in Sources */,
 				2F8D47B228DF558A00F86440 /* SceneDelegate.swift in Sources */,
@@ -546,6 +569,7 @@
 				2F29426028E099CD009EC7C4 /* PresentableAnswer.swift in Sources */,
 				2F29426428E09A2B009EC7C4 /* WrongAnswerCell.swift in Sources */,
 				2F232E5D28E32D6700BF84DF /* QuestionPresenter.swift in Sources */,
+				2F309EAE28EB878200770D0A /* ResultAnswerCell.swift in Sources */,
 				2F232E5328E2303C00BF84DF /* iOSUIKitViewControllerFactory.swift in Sources */,
 				2F29426F28E0F6E4009EC7C4 /* NavigationControllerRouter.swift in Sources */,
 				2F2B336B28EB122C00AF09C8 /* iOSSwiftViewControllerFactory.swift in Sources */,
