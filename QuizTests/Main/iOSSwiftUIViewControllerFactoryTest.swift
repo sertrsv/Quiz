@@ -63,22 +63,22 @@ final class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
 		XCTAssertEqual(view.store.options.map(\.text), options[multipleAnswerQuestion])
 	}
 
-	func test_resultsViewController_createControllerWithTitle() {
-		let (controller, presenter) = makeResults()
+	func test_resultsViewController_createControllerWithTitle() throws {
+		let (view, presenter) = try XCTUnwrap(makeResults())
 
-		XCTAssertEqual(controller.title, presenter.title)
+		XCTAssertEqual(view.title, presenter.title)
 	}
 
-	func test_resultsViewController_createControllerWithSummary() {
-		let (controller, presenter) = makeResults()
+	func test_resultsViewController_createControllerWithSummary() throws {
+		let (view, presenter) = try XCTUnwrap(makeResults())
 
-		XCTAssertEqual(controller.summary, presenter.summary)
+		XCTAssertEqual(view.summary, presenter.summary)
 	}
 
-	func test_resultsViewController_createControllerWithPresentableAnswers() {
-		let (controller, presenter) = makeResults()
+	func test_resultsViewController_createControllerWithPresentableAnswers() throws {
+		let (view, presenter) = try XCTUnwrap(makeResults())
 
-		XCTAssertEqual(controller.answers.count, presenter.presentableAnswers.count)
+		XCTAssertEqual(view.answers, presenter.presentableAnswers)
 	}
 
 	// MARK: Helpers
@@ -125,7 +125,7 @@ final class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
 		return controller?.rootView
 	}
 
-	private func makeResults() -> (controller: ResultsViewController, presenter: ResultsPresenter) {
+	private func makeResults() -> (view: ResultView, presenter: ResultsPresenter)? {
 		let sut = makeSUT()
 
 		let presenter = ResultsPresenter(
@@ -134,9 +134,8 @@ final class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
 			scorer: BasicScore.score
 		)
 
-		let controller = sut.resultsViewController(for: correctAnswers) as! ResultsViewController
-		return (controller, presenter)
+		let controller = sut.resultsViewController(for: correctAnswers) as? UIHostingController<ResultView>
+		return controller.map { ($0.rootView, presenter) }
 	}
 
 }
-
