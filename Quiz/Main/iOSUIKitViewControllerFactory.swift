@@ -1,5 +1,5 @@
 //
-//  iOSViewControllerFactory.swift
+//  iOSUIKitViewControllerFactory.swift
 //  Quiz
 //
 //  Created by Sergey Tarasov on 26.09.2022.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import QuizEngine
 
-final class iOSViewControllerFactory: ViewControllerFactory {
+final class iOSUIKitViewControllerFactory: ViewControllerFactory {
 	typealias Answers = [(question: Question<String>, answer: [String])]
 
 	private let options: [Question<String>: [String]]
