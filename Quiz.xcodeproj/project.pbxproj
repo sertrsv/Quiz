@@ -129,10 +129,8 @@
 		2F16616A28E473D60013EDA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2FDAC54728E4755300CC1723 /* Launch */,
-				2F16616C28E4740E0013EDA1 /* Question */,
-				2F16616E28E4742A0013EDA1 /* Result */,
-				2F16616D28E474250013EDA1 /* Helpers */,
+				2F2B336328EA715D00AF09C8 /* SwiftUI */,
+				2F2B336228EA714600AF09C8 /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -197,6 +195,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F2B336228EA714600AF09C8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				2FDAC54728E4755300CC1723 /* Launch */,
+				2F16616C28E4740E0013EDA1 /* Question */,
+				2F16616E28E4742A0013EDA1 /* Result */,
+				2F16616D28E474250013EDA1 /* Helpers */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		2F2B336328EA715D00AF09C8 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		2F64A64328E79ADE00A180CC /* Scoring */ = {
