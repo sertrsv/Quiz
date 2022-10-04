@@ -13,6 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 	var quiz: Quiz?
 
+	private lazy var navigationController = UINavigationController()
+
 	func scene(
 		_ scene: UIScene,
 		willConnectTo session: UISceneSession,
@@ -23,6 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 
+		startNewQuiz()
+
+		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+		window?.windowScene = windowScene
+		window?.rootViewController = navigationController
+		window?.makeKeyAndVisible()
+	}
+
+	private func startNewQuiz() {
 		let question1 = Question.singleAnswer("What is the best programming language?")
 		let question2 = Question.multipleAnswer("Кто хочет спать?")
 		let questions = [question1, question2]
@@ -42,18 +53,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let options = [question1: options1, question2: options2]
 		let correctAnswers = [(question1, [option3]), (question2, [option21, option22, option23, option24])]
 
-		let navigationController = UINavigationController()
 		let adapter = iOSSwiftUINavigationAdapter(
 			navigation: navigationController,
 			options: options,
 			correctAnswers: correctAnswers,
-			playAgain: {}
+			playAgain: startNewQuiz
 		)
-
-		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-		window?.windowScene = windowScene
-		window?.rootViewController = navigationController
-		window?.makeKeyAndVisible()
 
 		quiz = Quiz.start(questions: questions, delegate: adapter)
 	}
