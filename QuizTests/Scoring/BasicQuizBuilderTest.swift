@@ -30,10 +30,15 @@ struct BasicQuizBuilder {
 
 	enum AddingError: Equatable, Error {
 		case duplicateOptions([String])
+		case missingAnswerOptions(answer: [String], options: [String])
 	}
 
 	init(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
 		let allOptions = options.all
+
+		guard allOptions.contains(answer) else {
+			throw AddingError.missingAnswerOptions(answer: [answer], options: allOptions)
+		}
 
 		guard Set(allOptions).count == allOptions.count else {
 			throw AddingError.duplicateOptions(allOptions)
@@ -76,6 +81,21 @@ final class BasicQuizBuilderTest: XCTestCase {
 			XCTAssertEqual(
 				error as? BasicQuizBuilder.AddingError,
 				BasicQuizBuilder.AddingError.duplicateOptions(["O1", "O1", "O3"])
+			)
+		}
+	}
+
+	func test_initWithSingleAnswerQuestion_missingAnswerInOptions_throw() throws {
+		XCTAssertThrowsError(
+			try BasicQuizBuilder(
+				singleAnswerQuestion: "Q1",
+				options: NonEmptyOptions(head: "O1", tail: ["O2", "O3"]),
+				answer: "O4"
+			)
+		) { error in
+			XCTAssertEqual(
+				error as? BasicQuizBuilder.AddingError,
+				BasicQuizBuilder.AddingError.missingAnswerOptions(answer: ["O4"], options: ["O1", "O2", "O3"])
 			)
 		}
 	}
