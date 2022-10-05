@@ -49,6 +49,7 @@
 		2F8D47E228DF575400F86440 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D47E128DF575400F86440 /* QuestionViewController.swift */; };
 		2F8D47E428DF591E00F86440 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8D47E328DF591E00F86440 /* QuestionViewController.xib */; };
 		2FCCB64428EE378900B8C6ED /* DemoQuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCB64328EE378900B8C6ED /* DemoQuizData.swift */; };
+		2FCCB64628EE3DE500B8C6ED /* BasicQuizBuilderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCB64528EE3DE500B8C6ED /* BasicQuizBuilderTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		2F8D47E128DF575400F86440 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		2F8D47E328DF591E00F86440 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		2FCCB64328EE378900B8C6ED /* DemoQuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoQuizData.swift; sourceTree = "<group>"; };
+		2FCCB64528EE3DE500B8C6ED /* BasicQuizBuilderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicQuizBuilderTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				2F64A64628E79BCC00A180CC /* ScoreTest.swift */,
+				2FCCB64528EE3DE500B8C6ED /* BasicQuizBuilderTest.swift */,
 			);
 			path = Scoring;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				2F8D47E028DF567100F86440 /* QuestionViewControllerTest.swift in Sources */,
 				2F64A64728E79BCC00A180CC /* ScoreTest.swift in Sources */,
 				2F2B336928EB0F2F00AF09C8 /* iOSSwiftUINavigationAdapterTest.swift in Sources */,
+				2FCCB64628EE3DE500B8C6ED /* BasicQuizBuilderTest.swift in Sources */,
 				2F232E5B28E32C5B00BF84DF /* QuestionPresenterTest.swift in Sources */,
 				2F29425828E08A4D009EC7C4 /* TableViewHelpers.swift in Sources */,
 				2F29425228E05FB8009EC7C4 /* ResultsViewControllerTest.swift in Sources */,
