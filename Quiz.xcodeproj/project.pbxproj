@@ -48,6 +48,7 @@
 		2F8D47E028DF567100F86440 /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D47DF28DF567100F86440 /* QuestionViewControllerTest.swift */; };
 		2F8D47E228DF575400F86440 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D47E128DF575400F86440 /* QuestionViewController.swift */; };
 		2F8D47E428DF591E00F86440 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8D47E328DF591E00F86440 /* QuestionViewController.xib */; };
+		2FCCB64428EE378900B8C6ED /* DemoQuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCB64328EE378900B8C6ED /* DemoQuizData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		2F8D47DF28DF567100F86440 /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		2F8D47E128DF575400F86440 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		2F8D47E328DF591E00F86440 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
+		2FCCB64328EE378900B8C6ED /* DemoQuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoQuizData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				2F79F61628ECB67900E93621 /* QuizApp.swift */,
 				2F8D47AF28DF558A00F86440 /* AppDelegate.swift */,
 				2F8D47B128DF558A00F86440 /* SceneDelegate.swift */,
+				2FCCB64328EE378900B8C6ED /* DemoQuizData.swift */,
 				2F232E5228E2303C00BF84DF /* iOSUIKitViewControllerFactory.swift */,
 				2F2B336A28EB122C00AF09C8 /* iOSSwiftUINavigationAdapter.swift */,
 				2F8D47B828DF558B00F86440 /* Assets.xcassets */,
@@ -567,6 +570,7 @@
 				2F8D47B228DF558A00F86440 /* SceneDelegate.swift in Sources */,
 				2F309EA828EB7B8A00770D0A /* BigButton.swift in Sources */,
 				2F309EA328EB553D00770D0A /* MultipleAnswerQuestion.swift in Sources */,
+				2FCCB64428EE378900B8C6ED /* DemoQuizData.swift in Sources */,
 				2F29426028E099CD009EC7C4 /* PresentableAnswer.swift in Sources */,
 				2F29426428E09A2B009EC7C4 /* WrongAnswerCell.swift in Sources */,
 				2F79F61728ECB67900E93621 /* QuizApp.swift in Sources */,
