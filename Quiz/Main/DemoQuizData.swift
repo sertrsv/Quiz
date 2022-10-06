@@ -7,31 +7,174 @@
 
 import QuizEngine
 
-let question1 = Question.singleAnswer("What is the best programming language?")
-let question2 = Question.multipleAnswer("Кто хочет спать?")
-let question3 = Question.singleAnswer("What's the capital of Brazil?")
-let questions = [question1, question2, question3]
+let demoQuiz = try! BasicQuizBuilder(
+	singleAnswerQuestion: "What is the best programming language?",
+	options: .init(head: "C++", tail: ["Python", "Swift", "Java"]),
+	answer: "Swift"
+)
+	.adding(
+		multipleAnswerQuestion: "What are the colors of the rainbow?",
+		options: .init(head: "Red", tail: ["Blue", "White", "Brown"]),
+		answer: .init(head: "Red", tail: ["Blue"])
+	)
+	.adding(
+		singleAnswerQuestion: "What's the capital of Brazil?",
+		options: .init(head: "Sao Paulo", tail: ["Rio de Janeiro", "Brazilia"]),
+		answer: "Brazilia"
+	)
+	.adding(
+		singleAnswerQuestion: "Which is the only planet in our solar system not named after a Roman or Greek god?",
+		options: .init(head: "Mars", tail: ["Upiter", "Earth", "Mercury"]),
+		answer: "Earth"
+	)
+	.build()
 
-let option1 = "C++"
-let option2 = "Python"
-let option3 = "Swift"
-let option4 = "Java"
-let options1 = [option1, option2, option3, option4]
+public struct BasicQuiz {
+	public let questions: [Question<String>]
+	public let options: [Question<String>: [String]]
+	public let correctAnswers: [(Question<String>, [String])]
+}
 
-let option21 = "Я"
-let option22 = "Я"
-let option23 = "Я"
-let option24 = "Я"
-let options2 = [option21, option22, option23, option24]
+public struct NonEmptyOptions {
+	let head: String
+	let tail: [String]
 
-let option31 = "Sao Paulo"
-let option32 = "Rio de Janeiro"
-let option33 = "Brazilia"
-let options3 = [option31, option32, option33]
+	public init(head: String, tail: [String]) {
+		self.head = head
+		self.tail = tail
+	}
 
-let options = [question1: options1, question2: options2, question3: options3]
-let correctAnswers = [
-	(question1, [option3]),
-	(question2, [option21, option22, option23, option24]),
-	(question3, [option33])
-]
+	var all: [String] {
+		[head] + tail
+	}
+}
+
+public struct BasicQuizBuilder {
+	private var questions: [Question<String>] = []
+	private var options: [Question<String>: [String]] = [:]
+	private var correctAnswers: [(Question<String>, [String])] = []
+
+	public enum AddingError: Equatable, Error {
+		case duplicateQuestion(Question<String>)
+		case duplicateOptions([String])
+		case duplicateAnswer([String])
+		case missingAnswerOptions(answer: [String], options: [String])
+	}
+
+	private init(
+		questions: [Question<String>],
+		options: [Question<String> : [String]],
+		correctAnswers: [(Question<String>, [String])]
+	) {
+		self.questions = questions
+		self.options = options
+		self.correctAnswers = correctAnswers
+	}
+
+	public init(
+		singleAnswerQuestion: String,
+		options: NonEmptyOptions,
+		answer: String
+	) throws {
+		try add(
+			singleAnswerQuestion: singleAnswerQuestion,
+			options: options,
+			answer: answer
+		)
+	}
+
+	public init(
+		multipleAnswerQuestion: String,
+		options: NonEmptyOptions,
+		answer: NonEmptyOptions
+	) throws {
+		try add(
+			multipleAnswerQuestion: multipleAnswerQuestion,
+			options: options,
+			answer: answer
+		)
+	}
+
+	public mutating func add(
+		singleAnswerQuestion: String,
+		options: NonEmptyOptions,
+		answer: String
+	) throws {
+		self = try adding(
+			singleAnswerQuestion: singleAnswerQuestion,
+			options: options,
+			answer: answer
+		)
+	}
+
+	public mutating func add(
+		multipleAnswerQuestion: String,
+		options: NonEmptyOptions,
+		answer: NonEmptyOptions
+	) throws {
+		self = try adding(
+			multipleAnswerQuestion: multipleAnswerQuestion,
+			options: options,
+			answer: answer
+		)
+	}
+
+	public func adding(
+		singleAnswerQuestion: String,
+		options: NonEmptyOptions,
+		answer: String
+	) throws -> BasicQuizBuilder {
+		try adding(
+			question: Question.singleAnswer(singleAnswerQuestion),
+			options: options.all,
+			answer: [answer]
+		)
+	}
+
+	public func adding(
+		multipleAnswerQuestion: String,
+		options: NonEmptyOptions,
+		answer: NonEmptyOptions
+	) throws -> BasicQuizBuilder {
+		try adding(
+			question: Question.multipleAnswer(multipleAnswerQuestion),
+			options: options.all,
+			answer: answer.all
+		)
+	}
+
+	public func build() -> BasicQuiz {
+		BasicQuiz(questions: questions, options: options, correctAnswers: correctAnswers)
+	}
+
+	private func adding(
+		question: Question<String>,
+		options: [String],
+		answer: [String]
+	) throws -> BasicQuizBuilder {
+		guard !questions.contains(question) else {
+			throw AddingError.duplicateQuestion(question)
+		}
+
+		guard Set(options).count == options.count else {
+			throw AddingError.duplicateOptions(options)
+		}
+
+		guard Set(answer).count == answer.count else {
+			throw AddingError.duplicateAnswer(answer)
+		}
+
+		guard Set(answer).isSubset(of: Set(options)) else {
+			throw AddingError.missingAnswerOptions(answer: answer, options: options)
+		}
+
+		var newOptions = self.options
+		newOptions[question] = options
+
+		return BasicQuizBuilder(
+			questions: questions + [question],
+			options: newOptions,
+			correctAnswers: correctAnswers + [(question, answer)]
+		)
+	}
+}
