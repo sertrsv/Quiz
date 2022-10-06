@@ -5,7 +5,7 @@
 //  Created by Sergey Tarasov on 27.09.2022.
 //
 
-import QuizEngine
+import BasicQuizDomain
 
 final class ResultsPresenter {
 	typealias Answers = [(question: Question<String>, answer: [String])]

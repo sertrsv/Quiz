@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import QuizEngine
+import BasicQuizDomain
 @testable import Quiz
 
 final class NavigationControllerRouterTest: XCTestCase {

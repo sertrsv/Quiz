@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Quiz
+@testable import BasicQuizDomain
 
 final class ScoreTest: XCTestCase {
 

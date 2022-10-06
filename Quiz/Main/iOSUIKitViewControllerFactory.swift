@@ -5,9 +5,8 @@
 //  Created by Sergey Tarasov on 26.09.2022.
 //
 
-import Foundation
 import UIKit
-import QuizEngine
+import BasicQuizDomain
 
 final class iOSUIKitViewControllerFactory: ViewControllerFactory {
 	typealias Answers = [(question: Question<String>, answer: [String])]
