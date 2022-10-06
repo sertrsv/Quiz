@@ -23,12 +23,6 @@ struct NonEmptyOptions {
 	}
 }
 
-private struct EEE {
-	public func eee() {
-
-	}
-}
-
 struct BasicQuizBuilder {
 	private var questions: [Question<String>]
 	private var options: [Question<String>: [String]]
