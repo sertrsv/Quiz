@@ -15,13 +15,11 @@ struct MultipleAnswerQuestion: View {
 	var body: some View {
 		VStack(alignment: .leading) {
 			HeaderView(title: title, subtitle: question)
-			List {
-				ForEach(store.options.indices, id: \.self) { index in
-					Button {
-						store.options[index].select()
-					} label: {
-						Label(store.options[index].text, systemImage: store.options[index].isSelected ? "square.inset.filled" : "square")
-					}
+			List(store.options.indices, id: \.self) { index in
+				Button {
+					store.options[index].select()
+				} label: {
+					Label(store.options[index].text, systemImage: store.options[index].isSelected ? "square.inset.filled" : "square")
 				}
 			}
 			.listStyle(.plain)
